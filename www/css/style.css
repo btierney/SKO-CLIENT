@@ -1058,3 +1058,7 @@ h1 {
     padding: 10px;
 	margin-bottom: 2px;
 }
+.ui-content {
+	max-height:546px !important;
+}
+
