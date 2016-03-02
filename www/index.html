@@ -1,50 +1,235 @@
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
-    <title>Hello World</title>
-
-    <link rel="stylesheet" href="css/app.css">
-    <script src="cordova.js" type="text/javascript"></script>
-    <script src="feedhenry.js" type="text/javascript"></script>
-    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src: 'self' 'unsafe-inline' 'unsafe-eval'" />
+<title>Red Hat Legal Team - SKO</title>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="css/framework.css" rel="stylesheet" type="text/css">
+<link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+<link href="css/animate.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css">
 </head>
 
-<body>
-<header class="header-footer-bg">
-    <div class="center">
-        <h3>FeedHenry
-            <small>QuickStart - Cordova</small>
-        </h3>
-    </div>
-</header>
-
-<div id="count" class="">
-    <div id="formWrapper">
-        <p id="description">This is a basic Cordova App that can take in your name, send it to a cloud app and display the response.</p>
-        <br>
-
-        <div class="input-div">
-            <input id="hello_to" type="text" class="input-text" placeholder="Enter Your Name Here."/>
-        </div>
-
-        <br>
-
-        <button id="say_hello" type="button" class="say-hello-button">Say Hello From The Cloud</button>
-        <div id="cloudResponse" class="cloudResponse"></div>
-    </div>
+<body class="left-sidebar">
+<!-- ***************************** --> 
+<!-- GLOBAL PRELOADER -->
+<div id="preloader">
+  <div id="status">
+    <div class="preloader-logo"></div>
+    <h3 class="center-text">Welcome</h3>
+    <p class="center-text smaller-text"> We're lawyers! Give us a sec....</p>
+  </div>
 </div>
+<!-- END GLOBAL PRELOADER --> 
+<!-- ***************************** --> 
 
-<footer class="header-footer-bg">
-    <div>
-        <small class="right">
-            <!-- v.&nbsp;{{ version }} -->
-        </small>
+<!-- Important for all pages that have galleries or portfolios -->
+<div class="gallery-fix"></div>
+<!-- END Important for all pages that have galleries or portfolios --> 
+<!-- ***************************** --> 
+
+<!-- ***************************** --> 
+<!-- WELCOME PAGE-->
+<div id="pageWelcome" data-role="page">   
+  <div data-role="header" data-id="skoHeader" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="" >
+    <div id="header-fixed">
+      <div class="header-elements"><a class="open-contact" href="#contactPage"><i class="fa fa-cog"></i></a> <a data-ajax="false" class="header-logo" href="#pageWelcome"><img src="images/logo-light.png" alt="img"></a> </div>
     </div>
-</footer>
+  </div>
+  <!-- CONTENT -->
+  <div role="main" class="ui-content">
+    <div class="container-fullscreen">
+      <div class="homepage-cover-slider" data-snap-ignore="true">
+        <div class="homepage-cover homepage-cover-bg-1">
+          <h4>Witness the Power<br>
+            Of This Fully Operational Leagal Quiz</h4>
+          <p> Please take a moment to answer these questions to the best of your abilities. Winners will be selected and prizes will be won. "Please choose wisely" </p>
+          <a href="#pageLogin" class="homepage-cover-button bg-red-dark">Get Started By Logging In</a>
+          <div class="overlay"></div>
+        </div>
+        <div class="homepage-cover homepage-cover-bg-2">
+          <h4>Witness the Power<br>
+            Of This Fully Operational Leagal Quiz</h4>
+          <p> Please take a moment to answer these questions to the best of your abilities. Winners will be selected and prizes will be won. "Please choose wisely" </p>
+          <a href="#pageLogin" class="homepage-cover-button bg-red-dark">Get Started By Logging In</a>
+          <div class="overlay"></div>
+        </div>
+        <div class="homepage-cover homepage-cover-bg-3">
+          <h4>Witness the Power<br>
+            Of This Fully Operational Leagal Quiz</h4>
+          <p> Please take a moment to answer these questions to the best of your abilities. Winners will be selected and prizes will be won. "Please choose wisely" </p>
+          <a href="#pageLogin" class="homepage-cover-button bg-red-dark">Get Started By Logging In</a>
+          <div class="overlay"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END CONTENT -->
+  <div data-role="footer" data-id="skoFooter" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="" >
+    <p class="center-text skoFooter">Copyright 2015. All rights reserved.</p>
+  </div>
+</div>
+<!-- END WELCOME PAGE--> 
+<!-- LOGIN PAGE-->
+<div id="pageLogin" data-role="page"> 
+  <div data-role="header" data-id="skoHeader" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="" >
+    <div id="header-fixed">
+      <div class="header-elements"><a class="open-contact" href="#contactPage"><i class="fa fa-cog"></i></a> <a data-ajax="false" class="header-logo" href="#pageWelcome"><img src="images/logo-light.png" alt="img"></a> </div>
+    </div>
+  </div>
+  <!-- CONTENT -->
+  <div role="main" class="ui-content sko-content">
+    <h1>Enter your email</h1>
+<input type="email" data-clear-btn="true" name="email" id="email" placeholder="Enter Your Red Hat Email" value="">
+    <h1>Choose your region</h1>
+    <select id="region">
+        <option value="">Please Choose...</option>
+        <option value="wemea">WEMEA: W. Europe, M. East & Africa</option>
+        <option value="cene">CENE: Central, Eastern & Norther Europe</option>
+        <option value="other">Other</option>
+    </select>
+<!--    
+   <select id="region">
+      <option value="">Please Choose...</option>
+      <option value="canada">Canada</option>
+      <option value="central">Central</option>
+      <option value="fsi">FSI</option>
+      <option value="northeast">North East</option>
+      <option value="other">Other</option>
+      <option value="publicsector">Public Sector</option>
+      <option value="southeast">South East</option>
+      <option value="west">West</option>
+    </select>
+-->
+    <button id="btnLogin" type="button" class="say-hello-button">Login</button>
+  </div>
+  <!-- END CONTENT --> 
+  <div data-role="footer" data-id="skoFooter" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="" >
+    <p class="center-text skoFooter">Copyright 2015. All rights reserved.</p>
+  </div>
+</div>
+<!-- END LOGIN PAGE--> 
+<!-- QUESTIONS PAGE-->
+<div id="pageQuestions" data-role="page">
+  <div data-role="header" data-id="skoHeader" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="" >
+    <div id="header-fixed">
+      <div class="header-elements"><a class="open-contact" href="#contactPage"><i class="fa fa-cog"></i></a> <a data-ajax="false" class="header-logo" href="#pageWelcome"><img src="images/logo-light.png" alt="img"></a> </div>
+    </div>
+  </div>
+  <!-- CONTENT -->
+  <div role="main" class="ui-content sko-content">
+  	<div id= "questionPanel"></div>
+   </div> 
+  <!-- END CONTENT -->
+  <div data-role="footer" data-id="skoFooter" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="" >
+    <div data-role="controlgroup" data-type="horizontal"> <a href="#" id="btnPrev" data-role="button" data-icon="arrow-l" data-iconpos="left">Prev</a> <a href="#" id="btnSubmit" data-role="button">Submit</a> <a href="#" id="btnNext" data-role="button" data-icon="arrow-r"data-iconpos="right">Next</a> </div>
+  </div>
+</div>
+<!-- END QUESTIONS PAGE--> 
 
-<script src="hello.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- TEST RESULTS PAGE-->
+<div id="pageResults" data-role="page">
+  <div data-role="header" data-id="skoHeader" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="" >
+    <div id="header-fixed">
+      <div class="header-elements"><a class="open-contact" href="#contactPage"><i class="fa fa-cog"></i></a> <a data-ajax="false" class="header-logo" href="#pageWelcome"><img src="images/logo-light.png" alt="img"></a> </div>
+    </div>
+  </div>
+  <!-- CONTENT -->
+  <div role="main" class="ui-content sko-content">
+    <div id="testResultsPanel"></div>
+  </div>
+  <!-- END CONTENT -->
+  <div data-role="footer" data-id="skoFooter" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="" >
+    <p class="center-text skoFooter">Copyright 2015. All rights reserved.</p>
+  </div>
+</div>
+<!-- END TEST RESUlTS PAGE--> 
+
+
+
+
+
+
+
+
+
+
+
+<!-- CONTACT PAGE-->
+<div id="contactPage" data-role="page">
+  <div data-role="header" data-id="skoHeader" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="" >
+    <div id="header-fixed">
+      <div class="header-elements"><a class="open-contact" href="#contactPage"><i class="fa fa-cog"></i></a> <a data-ajax="false" class="header-logo" href="#pageWelcome"><img src="images/logo-light.png" alt="img"></a> </div>
+    </div>
+  </div>
+  <!-- CONTENT -->
+                <div class="container-fullscreen">
+                    <img src="images/redhat-hq.jpg" style=" min-width:360px; max-width:400px">   
+                </div>
+                <div role="main" class="ui-content sko-content">
+                <div class="one-half-responsive">
+                <div class="container heading-style-5">
+                    <h4 class="heading-title">Get in touch!</h4>
+                    <i class="fa fa-envelope-o heading-icon"></i>
+                    <div class="line bg-black"></div>
+                    <p class="heading-subtitle">
+                        Questions, comments? Please feel free to contact the Red Hat Legal Team, at any time.
+                    </p>
+                </div>
+                </div>
+                <div class="decoration hide-if-responsive"></div>
+                <div class="one-half-responsive last-column">
+                    <div class="container no-bottom">
+                          <p>
+                            <strong>Contact Information:</strong><br>
+                            <a href="tel: +1 919 754 4950" class="contact-call"><i class="fa fa-phone"></i>+ 1 919 800 3804</a>
+                            <a href="mailto:name@domain.com" class="contact-mail"><i class="fa fa-envelope"></i>info@redhat.com</a>
+                        </p>
+                        <p>
+                            <strong>Postal Information</strong><br>
+                                100 East Davie Street<br>
+    							Raleigh, NC 27601<br>
+    							United States
+                        </p>
+                    </div>            
+                </div>  
+                
+  <!-- End of entire page content-->
+            </div>
+  <!-- END CONTENT -->
+  <div data-role="footer" data-id="skoFooter" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="" >
+    <p class="center-text skoFooter">Copyright 2015. All rights reserved.</p>
+  </div>
+</div>
+<!-- END CONTACT PAGE--> 
+
+
+
+<script src="scripts/jquery-1.12.1.min.js"></script>
+<script src="scripts/jquery.mobile-1.4.5.min.js"></script>
+<script src="feedhenry.js" type="text/javascript"></script> 
+<script type="text/javascript" src="scripts/jquerySmooth.js"></script> 
+<script type="text/javascript" src="scripts/jqueryui.js"></script> 
+<script type="text/javascript" src="scripts/framework-plugins.js"></script> 
+<script type="text/javascript" src="scripts/custom.js"></script> 
+<script type="text/javascript" src="scripts/skoclient.js"></script>
 </body>
 </html>
-
