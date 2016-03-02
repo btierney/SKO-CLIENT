@@ -9,8 +9,7 @@
     <preference name="fullscreen" value="true" />
     <preference name="webviewbounce" value="true" />
     <plugin name="cordova-plugin-whitelist" spec="1.2.0" />
-</widget>
-<platform name="ios">
+	<platform name="ios">
               <!-- iOS 8.0+ -->
               <!-- iPhone 6 Plus  -->
               <icon src="res/icons/ios/icon-60@3x.png" width="180" height="180" />
@@ -38,3 +37,4 @@
               <icon src="res/icons/ios/icon-50.png" width="50" height="50" />
               <icon src="res/icons/ios/icon-50@2x.png" width="100" height="100" />
      </platform>
+</widget>
