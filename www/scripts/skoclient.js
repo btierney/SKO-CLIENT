@@ -4,20 +4,24 @@ var currentQuestion = 0;
 var questionsAnswered = 0;
 var score = 0;
 
-// EXECUTE IMMIDIATELY
+// EXECUTE IMMEDIATELY
 $(document).ready( function() {    
     
     $('#pageQuestions').on('pageshow', function (){
+        
+        console.log ('pageshow: pageQuestions' );
+        
         $('#btnPrev').on ('click', fPrev);
         $('#btnNext').on ('click', fNext);
 
         disable('#btnPrev');
         disable('#btnSubmit')
+        enable('#btnNext');
         
-         displayQuestion(0);
+        displayQuestion(0);
     });
     
-    $('#pageLogin').on('pageshow', function() {
+    $('#pageLogin').on('pageshow', function() { 
       $('#btnLogin').on('click', fLogon);
     });
     
@@ -45,9 +49,12 @@ $(document).ready( function() {
 
 // LOGIN TO THE SERVER
 var fLogon = function() {
+    // RE-INITIALIZE IN CASE THEY RE-LOGIN 
+    resetApp();
+    
     // VALIDATE THAT THE EMAIL WAS FORMATTED PROPERLY e.g. foo@blah.com
     if (!validateEmail()){
-        alert("Enter a valid email");
+        alert("Enter a valid Redhat email address!");
         return;
     }
     if ("" === document.getElementById('region').value){
@@ -123,7 +130,13 @@ $('#btnSubmit').on( 'click', function () {
 });
 
 // PREVIOUS BUTTON - LISTEN TO THE CLICK EVENT(S)
-var fPrev = function(){    
+var fPrev = function(){  
+
+    // DEBUG
+    console.log('fPref()');
+    console.log('currentQuestion: ' + currentQuestion);
+    console.log('questionsAnswered: ' + questionsAnswered);
+    // END DEBUG  
     enable ('#btnNext');
 
     if (currentQuestion == 1){
@@ -138,6 +151,14 @@ var fPrev = function(){
 
 // NEXT BUTTON - LISTEN TO THE CLICK EVENT(S)
 var fNext = function() {    
+
+    // DEBUG
+    
+    console.log('fNext()');
+    console.log('currentQuestion: ' + currentQuestion);
+    console.log('questionsAnswered: ' + questionsAnswered);
+    // END DEBUG  
+
     enable ('#btnPrev');
     if (currentQuestion == 8){
         disable('#btnNext');
@@ -160,8 +181,15 @@ function displayQuestion (currentQuestion){
     var len = a.length;
     var count = 0;
 
-    // THIS IS THE CONTAINER GROUP THAT WILL HOUSE THE RADIOBUTTONS    
-    var html = '<fieldset id="fsQuestions" data-role="controlgroup"><legend id="lgnd">' + q.question + '</legend>';
+    // ADDED THE DIV CLASS TO SHOW A PROGRESS BAR. 
+    // BILL - COMMENT THE LINE BELOW AND UNCOMMENT THE ONE BENEATH THAT
+    // THIS IS SO THAT I CAN SEE IT'S WORKING
+    var html = '<div class="step"' + questionsAnswered +  '>STEP:' + questionsAnswered + '</div>'
+    // THIS THE ONE YOU WANT!!!!!
+    //var html = '<div class="step"' + questionsAnswered +  '></div>'
+
+    // THIS IS THE CONTAINER GROUP THAT WILL HOUSE THE RADIOBUTTONS 
+    html += '<fieldset id="fsQuestions" data-role="controlgroup"><legend id="lgnd">' + q.question + '</legend>';
 
     // THIS IS THE QUESTION
     $('#lgnd').text(q.question);
@@ -253,26 +281,18 @@ function displayResults(){
      $('#testResultsPanel').html(_html);             
 }
 
-// LOGIN BUTTON
-// UHM ... I SHOULD PROBABLY CONVERT THIS TO JQUERY SYNTAX.
-// function login() {
-//     if (!validateEmail()){
-//         alert("Enter a valid email");
-//         return;
-//     }
-//     if ("" === document.getElementById('region').value){
-//         alert("PLEASE CHOOSE A REGION");
-//         return;
-//     } else {
-//         document.getElementById('btnNext').style.visibility='visible';
-//         document.getElementById('formWrapper').style.display = "block";
-//         document.getElementById('loginPage').style.display = "none";
-//         document.getElementById('resultsPage').style.display = "none"  
-//         displayQuestion(0);
-//         return;
-//     }
-// }
-
+// RESET QUESTIONS
+function resetApp(){
+    score = 0;
+    currentQuestion = 0;
+    questionsAnswered = 0;
+    var count = 0;
+    
+    for (; count<10; count++){
+        questions[count].choice = 0;
+    }
+    
+}
 // SHOW BUTTON
 function enable(navbutton){
     //document.getElementById(navbutton).style.visibility='visible';
@@ -289,12 +309,20 @@ function disable(navbutton){
 // Validate the email format - 
 // ** NEED TO CONVERT THIS TO JQUERY SYNTAX 
 function validateEmail() {
-    var x = document.getElementById('email').value;
-    var atpos = x.indexOf("@");
-    var dotpos = x.lastIndexOf(".");
-    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+    var pos = 0;
+    var addr = document.getElementById('email').value;
+    var atpos = addr.indexOf("@");
+    var dotpos = addr.lastIndexOf(".");
+    
+    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=addr.length) {
         return false;
     } else {
-        return true;
+        // OKAY ... it's a valid email, now lets check for @redhat.com
+        pos = addr.toLowerCase().indexOf('@redhat.com');
+        if (pos > 0 ){
+            return true;
+        } else {
+            return false;
+        }
     }
 }
