@@ -11,8 +11,8 @@ $(document).ready( function() {
         
         console.log ('pageshow: pageQuestions' );
         
-        $('#btnPrev').on ('click', fPrev);
-        $('#btnNext').on ('click', fNext);
+        $('#btnPrev').unbind().on ('click', fPrev);
+        $('#btnNext').unbind().on ('click', fNext);
 
         disable('#btnPrev');
         disable('#btnSubmit')
@@ -133,7 +133,7 @@ $('#btnSubmit').on( 'click', function () {
 var fPrev = function(){  
 
     // DEBUG
-    console.log('fPref()');
+    console.log('previous ..');
     console.log('currentQuestion: ' + currentQuestion);
     console.log('questionsAnswered: ' + questionsAnswered);
     // END DEBUG  
@@ -154,7 +154,7 @@ var fNext = function() {
 
     // DEBUG
     
-    console.log('fNext()');
+    console.log('next ...');
     console.log('currentQuestion: ' + currentQuestion);
     console.log('questionsAnswered: ' + questionsAnswered);
     // END DEBUG  
