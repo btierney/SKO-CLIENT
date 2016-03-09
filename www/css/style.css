@@ -761,13 +761,14 @@ body{
 .homepage-cover-bg-3{    background-image:url(../images/slider/home-cover-3.jpg);}
 
 .homepage-cover h4{
-    position:absolute;
+    position:relative;
+	display:block;
     color:#FFFFFF;
     font-size:21px;
     line-height:28px;
     font-weight:800;
     text-transform: uppercase;
-    top:90px;
+ 	padding-top: 60px;
     z-index:10;
     padding-left:30px;
     padding-right:30px;
@@ -775,20 +776,21 @@ body{
 }
 
 .homepage-cover p{
-    position:absolute;
+    position:relative;
     color:rgba(255,255,255,0.8);
     z-index:10;
     padding-left:30px;
     padding-right:30px;
-    top:225px;
+	padding-top: 20px;
+    display:block;
     font-size:12px;
 	line-height: 20px;
 	text-shadow: 1px 0px #000000;
 }
 
 .homepage-cover-button{
-    position:absolute;
-    top:325px;
+    position:relative;
+    display:block;
     z-index:10;
     width:85%;
     left:50%;
@@ -1061,4 +1063,13 @@ h1 {
 .ui-content {
 	max-height:642px !important;
 }
-
+.hideInfo{
+	display:none !important;	
+}
+.heading-title > i {
+	font-size: 10px;
+}
+.disclosure {
+	line-height: 1.4em;
+	font-size:9px;
+}

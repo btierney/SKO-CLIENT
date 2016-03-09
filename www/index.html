@@ -10,6 +10,8 @@
 <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
 <link href="css/animate.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css">
+<script src="scripts/jquery-1.12.1.min.js"></script>
+<script src="scripts/jquery.mobile-1.4.5.min.js"></script>
 </head>
 
 <body class="left-sidebar">
@@ -32,10 +34,17 @@
 
 <!-- ***************************** --> 
 <!-- WELCOME PAGE-->
-<div id="pageWelcome" data-role="page">   
+<div id="pageWelcome" data-role="page">
+<!-- Show the Info Button -->
+<script>
+$('#pageWelcome').on('pageshow',function(){
+ $('.hideInfo').removeClass('hideInfo');
+});
+</script>
+<!-- End Hide the Info Button -->
   <div data-role="header" data-id="skoHeader" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="" >
     <div id="header-fixed">
-      <div class="header-elements"><a class="open-contact" href="#contactPage"><i class="fa fa-info-circle"></i></a> <a data-ajax="false" class="header-logo" href="#pageWelcome"><img src="images/logo-light.png" alt="img"></a> </div>
+      <div class="header-elements"><a class="open-contact" href="#contactPage"><i class="fa fa-info-circle"></i></a> <a  class="header-logo" href="#pageWelcome"><img src="images/logo-light.png" alt="img"></a> </div>
     </div>
   </div>
   <!-- CONTENT -->
@@ -46,15 +55,13 @@
           <h4>Witness the Power<br>
             Of This Fully Operational Legal Quiz</h4>
           <p> Please take a moment to answer these questions to the best of your abilities. Please choose wisely.</p>
-          <!--<p> Please take a moment to answer these questions to the best of your abilities. If you can master this test, you may be eligible to win an Apple Watch. "Please choose wisely." </p>-->
           <a href="#pageLogin" class="homepage-cover-button bg-red-dark">Get Started By Logging In</a>
           <div class="overlay"></div>
         </div>
-        <div class="homepage-cover homepage-cover-bg-2">
+      <div class="homepage-cover homepage-cover-bg-2">
           <h4>Witness the Power<br>
             Of This Fully Operational Legal Quiz</h4>
           <p> Please take a moment to answer these questions to the best of your abilities. Please choose wisely.</p>
-          <p> Please take a moment to answer these questions to the best of your abilities. Winners will be selected and prizes will be won. "Please choose wisely." </p>
           <a href="#pageLogin" class="homepage-cover-button bg-red-dark">Get Started By Logging In</a>
           <div class="overlay"></div>
         </div>
@@ -62,7 +69,6 @@
           <h4>Witness the Power<br>
             Of This Fully Operational Legal Quiz</h4>
           <p> Please take a moment to answer these questions to the best of your abilities. Please choose wisely.</p>
-          <p> Please take a moment to answer these questions to the best of your abilities. Winners will be selected and prizes will be won. "Please choose wisely." </p>
           <a href="#pageLogin" class="homepage-cover-button bg-red-dark">Get Started By Logging In</a>
           <div class="overlay"></div>
         </div>
@@ -74,12 +80,38 @@
     <p class="center-text skoFooter">Copyright 2015. All rights reserved.</p>
   </div>
 </div>
-<!-- END WELCOME PAGE--> 
+<!-- END WELCOME PAGE-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- LOGIN PAGE-->
-<div id="pageLogin" data-role="page"> 
+<div id="pageLogin" data-role="page">
+<!-- Hide the Info Button -->
+<script>
+$('#pageLogin').on('pageshow',function(){
+ $('.open-contact').addClass('hideInfo');
+});
+</script>
+<!-- End Hide the Info Button -->
   <div data-role="header" data-id="skoHeader" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="" >
     <div id="header-fixed">
-      <div class="header-elements"><a class="open-contact" href="#contactPage"><i class="fa fa-info-circle"></i></a> <a data-ajax="false" class="header-logo" href="#pageWelcome"><img src="images/logo-light.png" alt="img"></a> </div>
+      <div class="header-elements"><a class="open-contact" href="#contactPage"><i class="fa fa-info-circle"></i></a> <a  class="header-logo" href="#pageWelcome"><img src="images/logo-light.png" alt="img"></a> </div>
     </div>
   </div>
   <!-- CONTENT -->
@@ -114,12 +146,37 @@
     <p class="center-text skoFooter">Copyright 2015. All rights reserved.</p>
   </div>
 </div>
-<!-- END LOGIN PAGE--> 
+<!-- END LOGIN PAGE-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- QUESTIONS PAGE-->
 <div id="pageQuestions" data-role="page">
+
   <div data-role="header" data-id="skoHeader" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="" >
     <div id="header-fixed">
-      <div class="header-elements"><a class="open-contact" href="#contactPage"><i class="fa fa-info-circle"></i></a> <a data-ajax="false" class="header-logo" href="#pageWelcome"><img src="images/logo-light.png" alt="img"></a> </div>
+      <div class="header-elements"><a class="open-contact" href="#contactPage"><i class="fa fa-info-circle"></i></a> <a  class="header-logo" href="#pageWelcome"><img src="images/logo-light.png" alt="img"></a> </div>
     </div>
   </div>
   <!-- CONTENT -->
@@ -152,11 +209,20 @@
 
 
 
+
+
+
+
+
+
+
+
+
 <!-- TEST RESULTS PAGE-->
 <div id="pageResults" data-role="page">
   <div data-role="header" data-id="skoHeader" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="" >
     <div id="header-fixed">
-      <div class="header-elements"><a class="open-contact" href="#contactPage"><i class="fa <fa-info-circle></fa-info-circle>"></i></a> <a data-ajax="false" class="header-logo" href="#pageWelcome"><img src="images/logo-light.png" alt="img"></a> </div>
+      <div class="header-elements"><a class="open-contact" href="#contactPage"><i class="fa <fa-info-circle></fa-info-circle>"></i></a> <a  class="header-logo" href="#pageWelcome"><img src="images/logo-light.png" alt="img"></a> </div>
     </div>
   </div>
   <!-- CONTENT -->
@@ -180,11 +246,25 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- CONTACT PAGE-->
 <div id="contactPage" data-role="page">
   <div data-role="header" data-id="skoHeader" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="" >
     <div id="header-fixed">
-      <div class="header-elements"><a class="open-contact" href="#contactPage"><i class="fa fa-info-circle"></i></a> <a data-ajax="false" class="header-logo" href="#pageWelcome"><img src="images/logo-light.png" alt="img"></a> </div>
+      <div class="header-elements"><a class="open-contact" href="#contactPage"><i class="fa fa-info-circle"></i></a> <a  class="header-logo" href="#pageWelcome"><img src="images/logo-light.png" alt="img"></a> </div>
     </div>
   </div>
   <!-- CONTENT -->
@@ -194,28 +274,24 @@
                 <div role="main" class="ui-content sko-content">
                 <div class="one-half-responsive">
                 <div class="container heading-style-5">
-                    <h4 class="heading-title">Get in touch!</h4>
+                    <h4 class="heading-title">“The time is always right to do what is right.”<br><i>- Martin Luther King</i> </h4>
                     <i class="fa fa-envelope-o heading-icon"></i>
                     <div class="line bg-black"></div>
                     <p class="heading-subtitle">
-                        Questions, comments? Please feel free to contact the Red Hat Legal Team, at any time.
+                        If you have any questions about the Red Hat Code of Business Conduct and Ethics, please contact Red Hat Legal.
                     </p>
+                    <p style="text-align: left">
+                            <a href="http://investors.redhat.com/~/media/Files/R/Red-Hat-IR/governance-docs/conduct.pdf" class="contact-mail"><i class="fa fa-book"></i>View the Code of Conduct</a>
+                        </p>
                 </div>
                 </div>
                 <div class="decoration hide-if-responsive"></div>
                 <div class="one-half-responsive last-column">
                     <div class="container no-bottom">
-                          <p>
-                            <strong>Contact Information:</strong><br>
-                            <a href="tel: +1 919 754 4950" class="contact-call"><i class="fa fa-phone"></i>+ 1 919 800 3804</a>
-                            <a href="mailto:name@domain.com" class="contact-mail"><i class="fa fa-envelope"></i>info@redhat.com</a>
-                            <a href="http://investors.redhat.com/~/media/Files/R/Red-Hat-IR/governance-docs/conduct.pdf" class="contact-mail"><i class="fa fa-book"></i>Code of conduct</a>
-                        </p>
-                        <p>
-                            <strong>Postal Information</strong><br>
-                                100 East Davie Street<br>
-    							Raleigh, NC 27601<br>
-    							United States
+                          
+                        <p class="disclosure">
+                          Violations of the Code may be reported to your supervisor, Red Hat Legal, the Chairman of the Audit Committee or anonymously by calling: <br>
+(800) 224-9902 or (678) 999-4553.  
                         </p>
                     </div>            
                 </div>  
@@ -231,8 +307,7 @@
 
 
 
-<script src="scripts/jquery-1.12.1.min.js"></script>
-<script src="scripts/jquery.mobile-1.4.5.min.js"></script>
+
 <script src="feedhenry.js" type="text/javascript"></script> 
 <script type="text/javascript" src="scripts/jquerySmooth.js"></script> 
 <script type="text/javascript" src="scripts/jqueryui.js"></script> 
