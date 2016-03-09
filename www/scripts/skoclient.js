@@ -184,7 +184,7 @@ function displayQuestion (currentQuestion){
     // ADDED THE DIV CLASS TO SHOW A PROGRESS BAR. 
     // BILL - COMMENT THE LINE BELOW AND UNCOMMENT THE ONE BENEATH THAT
     // THIS IS SO THAT I CAN SEE IT'S WORKING
-    var html = '<div class="step"' + questionsAnswered +  '>STEP:' + questionsAnswered + '</div>'
+	var html = '<div class="meter"><span style="width:' + questionsAnswered + '0%">' + questionsAnswered + '0%</span></div>'
     // THIS THE ONE YOU WANT!!!!!
     //var html = '<div class="step"' + questionsAnswered +  '></div>'
 
