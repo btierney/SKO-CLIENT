@@ -40,12 +40,12 @@
     <access launch-external="yes" origin="market:*" />
 
     <platform name="android">
-        <icon src="www/stample_icon.png" density="ldpi" />
-        <icon src="www/stample_icon.png" density="mdpi" />
-        <icon src="www/stample_icon.png" density="hdpi" />
-        <icon src="www/stample_icon.png" density="xhdpi" />
-        <icon src="www/stample_icon.png" density="xxhdpi" />
-        <icon src="www/stample_icon.png" density="xxxhdpi" />
+        <icon src="www/res/icons/android/stample_icon.png" density="ldpi" />
+        <icon src="www/res/icons/android/stample_icon.png" density="mdpi" />
+        <icon src="www/res/icons/android/stample_icon.png" density="hdpi" />
+        <icon src="www/res/icons/android/stample_icon.png" density="xhdpi" />
+        <icon src="www/res/icons/android/stample_icon.png" density="xxhdpi" />
+        <icon src="www/res/icons/android/stample_icon.png" density="xxxhdpi" />
     </platform>
 
     <platform name="ios">
