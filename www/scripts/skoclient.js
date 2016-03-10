@@ -6,7 +6,6 @@ var score = 0;
 
 // EXECUTE IMMEDIATELY
 $(document).ready( function() {    
-    
     $('#pageQuestions').on('pageshow', function (){
         
         console.log ('pageshow: pageQuestions' );
@@ -23,6 +22,7 @@ $(document).ready( function() {
     
     $('#pageLogin').on('pageshow', function() { 
       $('#btnLogin').on('click', fLogon);
+      setupRegions();
     });
     
     $('#pageResults').on('pageshow', displayResults);
@@ -325,4 +325,40 @@ function validateEmail() {
             return false;
         }
     }
+}
+
+function setupRegions(){
+    $fh.cloud(
+        {
+            path: 'regions',
+            data: { "region" : ""}
+        },
+      function (res) {
+        console.log (res);
+        $.each(res, function (index, option) {
+            $('#region').append($('<option/>', { 
+                value: option.value,
+                text : option.text 
+            }));
+        });      
+      },
+      function (code, errorprops, params) {
+        alert('An error occured: ' + code + ' : ' + errorprops);
+      }
+  );    
+/*    
+    var regions = [
+        { 'value': 'wemea'  , 'text': 'WEMEA'},
+        { 'value': 'cene'   , 'text': 'CENE'},
+        { 'value': 'telco'  , 'text': 'Telco Vertical'},
+        { 'value': 'other'  , 'text': 'Other'}
+    ];    
+    $.each(regions, function (index, option) {
+        $('#region').append($('<option/>', { 
+            value: option.value,
+            text : option.text 
+        }));
+    });      
+*/
+    //$('#region').refesh();
 }
