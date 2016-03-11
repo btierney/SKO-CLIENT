@@ -5,7 +5,8 @@ var questionsAnswered = 0;
 var score = 0;
 
 // EXECUTE IMMEDIATELY
-$(document).ready( function() {    
+$(document).ready( function() {   
+     
     $('#pageQuestions').on('pageshow', function (){
         
         console.log ('pageshow: pageQuestions' );
@@ -326,7 +327,7 @@ function validateEmail() {
         }
     }
 }
-
+// PULL THE REGION INFORMATION FROM THE SERVER SO THAT WE DON'T HAVE TO 
 function setupRegions(){
     $fh.cloud(
         {
@@ -335,6 +336,7 @@ function setupRegions(){
         },
       function (res) {
         console.log (res);
+        $('#region').empty();
         $.each(res, function (index, option) {
             $('#region').append($('<option/>', { 
                 value: option.value,
