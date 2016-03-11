@@ -9,5 +9,5 @@
     <preference name="fullscreen" value="true" />
     <preference name="webviewbounce" value="true" />
     <plugin name="cordova-plugin-whitelist" spec="1.2.0" />
-    <icon src="www/res/icons/Icon.png" />
+    <icon src="www/res/icons/ios/Icon.png" />
 </widget>
