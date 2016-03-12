@@ -22,7 +22,7 @@ $(document).ready( function() {
     });
     
     $('#pageLogin').on('pageshow', function() { 
-      $('#btnLogin').on('click', fLogon);
+      $('#btnLogin').unbind().on('click', fLogon);
       setupRegions();
     });
     
@@ -329,6 +329,7 @@ function validateEmail() {
 }
 // PULL THE REGION INFORMATION FROM THE SERVER SO THAT WE DON'T HAVE TO 
 function setupRegions(){
+    $('#region').empty();
     $fh.cloud(
         {
             path: 'regions',
@@ -336,13 +337,22 @@ function setupRegions(){
         },
       function (res) {
         console.log (res);
-        $('#region').empty();
+        
+        // APPEND THE FIRST ELEMENT
+        $('#region').append($('<option/>', {
+            value: '',
+            text: ''
+        }));
+
+        // NOW APPEND THE DYNAMIC ONES
         $.each(res, function (index, option) {
             $('#region').append($('<option/>', { 
                 value: option.value,
                 text : option.text 
             }));
-        });      
+        }); 
+
+        $('#region').selectmenu('refresh');
       },
       function (code, errorprops, params) {
         alert('An error occured: ' + code + ' : ' + errorprops);

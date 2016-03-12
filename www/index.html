@@ -122,28 +122,9 @@ $('#pageLogin').on('pageshow',function(){
     <h1>Enter your email</h1>
 <input type="email" data-clear-btn="true" name="email" id="email" placeholder="Enter Your Red Hat Email" value="">
     <h1>Choose your region</h1>
-    <select id="region">
-        <option value="">Please Choose...</option>
-<!--
-        <option value="wemea">WEMEA</option>
-        <option value="cene">CENE</option>
-        <option value="other">Services, Partners & Alliances</option>
-        <option value="other">Other</option>
--->
-    </select>
-<!--    
-   <select id="region">
-      <option value="">Please Choose...</option>
-      <option value="canada">Canada</option>
-      <option value="central">Central</option>
-      <option value="fsi">FSI</option>
-      <option value="northeast">North East</option>
-      <option value="other">Other</option>
-      <option value="publicsector">Public Sector</option>
-      <option value="southeast">South East</option>
-      <option value="west">West</option>
-    </select>
--->
+    <!-- DYNAMICALLY SET THE REGIONS FROM THE CLOUD --> 
+    <select id="region"></select>
+
     <button id="btnLogin" type="button" class="say-hello-button">Login</button>
   </div>
   <!-- END CONTENT --> 
