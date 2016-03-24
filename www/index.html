@@ -57,6 +57,8 @@ $('#pageWelcome').on('pageshow',function(){
           <p> Test your knowledge of the Red Hat "Code of Business Conduct and Ethics" with these 10 questions.  
               If you can master this test, you may be eligible to win a prize.</p>
           <a href="#pageLogin" class="homepage-cover-button bg-red-dark">Get Started By Logging In</a>
+          <br/>
+          <a href="#pageStats" class="homepage-cover-button bg-red-dark">Regional Results Dashboard</a>
           <div class="overlay"></div>
         </div>
       <div class="homepage-cover homepage-cover-bg-2">
@@ -65,6 +67,8 @@ $('#pageWelcome').on('pageshow',function(){
           <p> Test your knowledge of the Red Hat "Code of Business Conduct and Ethics" with these 10 questions.  
               If you can master this test, you may be eligible to win a prize.</p>
           <a href="#pageLogin" class="homepage-cover-button bg-red-dark">Get Started By Logging In</a>
+          <br/>
+          <a href="#pageStats" class="homepage-cover-button bg-red-dark">Regional Results Dashboard</a>
           <div class="overlay"></div>
         </div>
         <div class="homepage-cover homepage-cover-bg-3">
@@ -73,6 +77,8 @@ $('#pageWelcome').on('pageshow',function(){
           <p> Test your knowledge of the Red Hat "Code of Business Conduct and Ethics" with these 10 questions.  
               If you can master this test, you may be eligible to win a prize.</p>
           <a href="#pageLogin" class="homepage-cover-button bg-red-dark">Get Started By Logging In</a>
+          <br/>
+          <a href="#pageStats" class="homepage-cover-button bg-red-dark">Regional Results Dashboard</a>
           <div class="overlay"></div>
         </div>
       </div>
@@ -225,7 +231,25 @@ $('#pageLogin').on('pageshow',function(){
 
 
 
-
+<!-- STATS PAGE-->
+<div id="pageStats" data-role="page">
+  <div data-role="header" data-id="skoHeader" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="" >
+    <div id="header-fixed">
+      <div class="header-elements"><a class="open-contact" href="#contactPage"><i class="fa <fa-info-circle></fa-info-circle>"></i></a> <a  class="header-logo" href="#pageWelcome"><img src="images/logo-light.png" alt="img"></a> </div>
+    </div>
+  </div>
+  <!-- CONTENT -->
+  <div role="main" class="ui-content sko-content">
+       <div class="chart-wrapper">
+         <div id="container" ></div>
+       </div>
+  </div>
+  <!-- END CONTENT -->
+  <div data-role="footer" data-id="skoFooter" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="" >
+    <p class="center-text skoFooter">Copyright 2016. All rights reserved.</p>
+  </div>
+</div>
+<!-- END STATS PAGE--> 
 
 
 
