@@ -60,7 +60,7 @@ var fLogon = function() {
     }
     //if ("" === document.getElementById('region').value){
     if ("" ===  $('#region').val() ) {
-        alert("Please select your reagion.");
+        alert("Please select your region.");
         return;
     } else {
         // VERIFY THAT THIS EMAIL HASN'T BEEN USED
