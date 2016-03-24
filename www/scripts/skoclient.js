@@ -317,7 +317,7 @@ function validateEmail() {
     // make sure there is text before the '@'
     var atpos = addr.indexOf("@") > 0;
     // match for red hat domain only
-    var rh = addr.substring(e.indexOf('@'), e.length) === '@redhat.com';
+    var rh = addr.substring(addr.indexOf('@'), addr.length) === '@redhat.com';
     // if both true then valid
     return atpos && rh ? true: false;
 }
