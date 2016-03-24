@@ -53,13 +53,14 @@ var fLogon = function() {
     // RE-INITIALIZE IN CASE THEY RE-LOGIN 
     resetApp();
     
-    // VALIDATE THAT THE EMAIL WAS FORMATTED PROPERLY e.g. foo@blah.com
+    // VALIDATE THAT THE EMAIL WAS FORMATTED PROPERLY e.g. foo@redhat.com
     if (!validateEmail()){
         alert("Enter a valid Redhat email address!");
         return;
     }
-    if ("" === document.getElementById('region').value){
-        alert("PLEASE CHOOSE A REGION");
+    //if ("" === document.getElementById('region').value){
+    if ("" ===  $('#region').val() ) {
+        alert("Please select your reagion.");
         return;
     } else {
         // VERIFY THAT THIS EMAIL HASN'T BEEN USED
@@ -89,6 +90,9 @@ var fLogon = function() {
 
 // SUBMIT THE ANSWERS BACK TO THE SERVER FOR ANALYSIS
 $('#btnSubmit').on( 'click', function () {
+    // DISABLE THE SUBMIT BUTTON TO AVOID MULTIPLE
+    disable('#btnSubmit');
+
     var count = 0;
     var len = questions.length;
     var answers = "";
@@ -297,7 +301,6 @@ function resetApp(){
 // SHOW BUTTON
 function enable(navbutton){
     //document.getElementById(navbutton).style.visibility='visible';
-    //class="ui-disabled"
     $(navbutton).removeClass('ui-disabled');
 }
 
@@ -308,25 +311,17 @@ function disable(navbutton){
 }
 
 // Validate the email format - 
-// ** NEED TO CONVERT THIS TO JQUERY SYNTAX 
 function validateEmail() {
-    var pos = 0;
-    var addr = document.getElementById('email').value;
-    var atpos = addr.indexOf("@");
-    var dotpos = addr.lastIndexOf(".");
-    
-    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=addr.length) {
-        return false;
-    } else {
-        // OKAY ... it's a valid email, now lets check for @redhat.com
-        pos = addr.toLowerCase().indexOf('@redhat.com');
-        if (pos > 0 ){
-            return true;
-        } else {
-            return false;
-        }
-    }
+    // get the value
+    var addr = $('#email').val().toLowerCase();
+    // make sure there is text before the '@'
+    var atpos = addr.indexOf("@") > 0;
+    // match for red hat domain only
+    var rh = addr.substring(e.indexOf('@'), e.length) === '@redhat.com';
+    // if both true then valid
+    return atpos && rh ? true: false;
 }
+
 // PULL THE REGION INFORMATION FROM THE SERVER SO THAT WE DON'T HAVE TO 
 function setupRegions(){
     $('#region').empty();
