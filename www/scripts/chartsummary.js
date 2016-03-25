@@ -1,8 +1,20 @@
 // PREP THE GRAPHS
+var chart;
 $(function () {
     var categories = [];
     var data = [];
-
+    
+    // THIS TO ADDED TO HANDLE SIZE BASED ON 
+    // THIS FIDDLE: http://jsfiddle.net/Behseini/qheh4w0n/
+    //
+    var newh = $("#chart-wrapper").height();
+    $( window ).resize(function() {
+          newh = $("#chart-wrapper").height();
+          chart.redraw();
+          chart.reflow();
+    });
+    
+   // Get the data from RHMAP 
    $fh.cloud(
         {
             path: 'rollupscores',
@@ -27,7 +39,7 @@ $(function () {
 })
 
 function plotGraph(categories, data) {
-    var chart = $('#container').highcharts({
+    chart = $('#container').highcharts({
         chart: {
             type: 'column'
         },
