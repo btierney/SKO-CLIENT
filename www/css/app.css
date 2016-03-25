@@ -115,3 +115,13 @@ footer > div > small {
 
     padding: 5px 0px 5px 0px;
 }
+/*
+#chart-wrapper {
+    height:80%;
+    background:#331266;
+}
+*/
+.highcharts-container{
+    width:50% !important; 
+    height:50% !important;
+}
