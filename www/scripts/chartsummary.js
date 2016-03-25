@@ -11,8 +11,8 @@ $(function () {
     $( window ).resize(function() {
           console.log("RESIZE");
           newh = $("#chart-wrapper").height();
-          chart.redraw();
-          chart.reflow();
+          //chart.redraw();
+          //chart.reflow();
     });
     
    // Get the data from RHMAP 
