@@ -1,20 +1,7 @@
 // PREP THE GRAPHS
-var chart;
-$(function () {
+$('#pageStats').on('pageshow', function (){
     var categories = [];
     var data = [];
-    
-    // THIS TO ADDED TO HANDLE SIZE BASED ON 
-    // THIS FIDDLE: http://jsfiddle.net/Behseini/qheh4w0n/
-    //
-    //var newh = $("#chart-wrapper").height();
-    
-    //$('#pageStats').on('pageshow', function (){
-          ///console.log("RESIZE"); 
-          //newh = $("#chart-wrapper").height();
-          //chart.redraw();
-          //chart.reflow();
-    //});
     
    // Get the data from RHMAP 
    $fh.cloud(
@@ -41,15 +28,12 @@ $(function () {
 })
 
 function plotGraph(categories, data) {
-    chart = $('#container').highcharts({
+    var chart = $('#container').highcharts({
         chart: {
             type: 'column',
-            reflow: true
         },
         legend: {
             enabled: false
-            //align: 'right',
-            //verticalAlign: 'middle'
         },        
         title: {
             text: 'Results'
@@ -67,13 +51,6 @@ function plotGraph(categories, data) {
                 text: 'Average Score %'
             }
         },
-        // tooltip: {
-        //     headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-        //     pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' + '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
-        //     footerFormat: '</table>',
-        //     shared: true,
-        //     useHTML: true
-        // },
         tooltip: {
             headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
             pointFormat: '<tr><td style="color:{series.color};padding:0"></td>' + '<td style="padding:0"><b>{point.y:.1f}%</b></td></tr>',
@@ -92,9 +69,4 @@ function plotGraph(categories, data) {
             data: data
         }]
     });
-    chart.redraw();
-    //chart.reflow();
-
-    //chart.options.legend.enabled = false;
-    
 }
