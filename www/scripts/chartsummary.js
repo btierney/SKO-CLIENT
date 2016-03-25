@@ -9,6 +9,7 @@ $(function () {
     //
     var newh = $("#chart-wrapper").height();
     $( window ).resize(function() {
+          console.log("RESIZE");
           newh = $("#chart-wrapper").height();
           chart.redraw();
           chart.reflow();
