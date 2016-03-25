@@ -9,11 +9,11 @@ $(function () {
     //
     //var newh = $("#chart-wrapper").height();
     
-    $('#pageStats').on('pageshow', function (){
-          console.log("RESIZE"); 
+    //$('#pageStats').on('pageshow', function (){
+          ///console.log("RESIZE"); 
           //newh = $("#chart-wrapper").height();
           //chart.redraw();
-          chart.reflow();
+          //chart.reflow();
     });
     
    // Get the data from RHMAP 
@@ -91,6 +91,9 @@ function plotGraph(categories, data) {
             data: data
         }]
     });
+    chart.redraw();
+    chart.reflow();
+
     //chart.options.legend.enabled = false;
     
 }
