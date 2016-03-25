@@ -43,7 +43,8 @@ $(function () {
 function plotGraph(categories, data) {
     chart = $('#container').highcharts({
         chart: {
-            type: 'column'
+            type: 'column';
+            reflow: true
         },
         legend: {
             enabled: false
@@ -92,7 +93,7 @@ function plotGraph(categories, data) {
         }]
     });
     chart.redraw();
-    chart.reflow();
+    //chart.reflow();
 
     //chart.options.legend.enabled = false;
     
