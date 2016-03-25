@@ -43,7 +43,7 @@ $(function () {
 function plotGraph(categories, data) {
     chart = $('#container').highcharts({
         chart: {
-            type: 'column';
+            type: 'column',
             reflow: true
         },
         legend: {
