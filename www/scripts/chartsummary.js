@@ -12,7 +12,7 @@ $(function () {
     $('#pageStats').on('pageshow', function (){
           console.log("RESIZE");
           //newh = $("#chart-wrapper").height();
-          chart.redraw();
+          //chart.redraw();
           chart.reflow();
     });
     
