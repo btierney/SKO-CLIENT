@@ -121,7 +121,7 @@ footer > div > small {
     background:#331266;
 }
 */
-.highcharts-container{
+#container{
     width:50% !important; 
     height:75% !important;
 }
