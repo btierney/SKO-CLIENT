@@ -10,7 +10,7 @@ $(function () {
     //var newh = $("#chart-wrapper").height();
     
     $('#pageStats').on('pageshow', function (){
-          console.log("RESIZE");
+          console.log("RESIZE"); 
           //newh = $("#chart-wrapper").height();
           //chart.redraw();
           chart.reflow();
