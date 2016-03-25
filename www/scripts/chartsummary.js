@@ -14,7 +14,7 @@ $(function () {
           //newh = $("#chart-wrapper").height();
           //chart.redraw();
           //chart.reflow();
-    });
+    //});
     
    // Get the data from RHMAP 
    $fh.cloud(
