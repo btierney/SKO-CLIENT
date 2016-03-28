@@ -60,7 +60,7 @@ function plotGraph(categories, data) {
                     hover: {
                         enabled: false,
                         halo : {
-                            enabled: false;
+                            enabled: false
                         }
                     }
                 }
