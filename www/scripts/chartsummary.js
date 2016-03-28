@@ -58,7 +58,10 @@ function plotGraph(categories, data) {
             series: {
                 states: {
                     hover: {
-                        enabled: false
+                        enabled: false,
+                        halo : {
+                            enabled: false;
+                        }
                     }
                 }
             }
